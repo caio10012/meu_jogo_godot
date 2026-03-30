@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://main"]
+
+[ext_resource type="Script" uid="uid://d07xouxoq0klx" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://scenes/ground.tscn" id="2_ground"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="3_player"]
+
+[node name="Main" type="Node2D" unique_id=2030659619]
+script = ExtResource("1_main")
+
+[node name="Ground" parent="." unique_id=13529884 instance=ExtResource("2_ground")]
+position = Vector2(0, 1180)
+
+[node name="Player" parent="." unique_id=1211779928 instance=ExtResource("3_player")]
+position = Vector2(360, 500)
