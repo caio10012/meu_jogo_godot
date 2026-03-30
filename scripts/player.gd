@@ -5,7 +5,6 @@ const JUMP_VELOCITY := -600.0
 
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-
 func _ready() -> void:
 	add_to_group("player")
 

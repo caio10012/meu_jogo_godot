@@ -1,8 +1,8 @@
 extends Node2D
 
 const ObstacleScene := preload("res://scenes/obstacle.tscn")
-const SPAWN_X := 780.0
-const SPAWN_Y := 1148.0  # ground top (1180) - metade do sprite (32)
+const SPAWN_AHEAD := 900.0
+const SPAWN_Y := 1148.0
 
 
 func _ready() -> void:
@@ -16,6 +16,9 @@ func _schedule_spawn() -> void:
 
 
 func _spawn() -> void:
+	var players := get_tree().get_nodes_in_group("player")
+	if players.is_empty():
+		return
 	var obstacle: Area2D = ObstacleScene.instantiate()
-	obstacle.position = Vector2(SPAWN_X, SPAWN_Y)
+	obstacle.position = Vector2(players[0].position.x + SPAWN_AHEAD, SPAWN_Y)
 	get_parent().add_child(obstacle)
