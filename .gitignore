@@ -6,6 +6,7 @@
 
 # Import cache
 *.import
+*.uid
 
 # Exported project files
 /export/
