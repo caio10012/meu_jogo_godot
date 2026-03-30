@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://obstacle"]
+
+[ext_resource type="Script" path="res://scripts/obstacle.gd" id="1_obstacle"]
+[ext_resource type="Texture2D" uid="uid://cerxanhxa2wic" path="res://icon.svg" id="2_icon"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(64, 64)
+
+[node name="Obstacle" type="Area2D"]
+script = ExtResource("1_obstacle")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_icon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
